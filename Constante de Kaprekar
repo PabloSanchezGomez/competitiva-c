@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int numero;
+    int numeros[4];
+    int c=0;
+    int i,j,k;
+    scanf("%d" , &numero);
+    
+    while(numero!=6174){
+    	//separa los numeros
+    	for(i=0; i<4;i++){
+    	    numeros[i] = numero%10;
+    	    numero = numero/10;
+    	}
+    	//ordena de mayor a menor
+    	for(j = 0; j<4; j++){
+    	    for(k = 0; k<4-j;k++){
+    	        if(numeros[k]  < numeros[k+1]){
+    	            int aux = numeros[k];
+    	            numeros[k] = numeros[k+1];
+    	            numeros[k+1] = aux;
+    	        }
+	    }
+	} 
+    numero = numeros[0]*1000+numeros[1]*100+numeros[2]*10+numeros[3]-(numeros[0]+numeros[1]*10+numeros[2]*100+numeros[3]*1000);
+	c++;  
+}
+    printf("%d",c);
+    return 0;
+}
