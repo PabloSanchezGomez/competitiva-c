@@ -1,0 +1,33 @@
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int n = 0,l = 0,j = 0,i = 0,nV = 0, nP = 0, k = 1;
+    int* vector;
+    scanf("%d",&n);
+    for(i;i<n;i++){
+        scanf("%d",&l);
+        vector = (int*)malloc(l*sizeof(int));
+        for(j;j<l;j++){
+            scanf("%d",&vector[j]);
+        }
+        for(k;k<l-1;k++){
+            if(vector[k-1] < vector[k] && vector[k+1]<vector[k]){
+                nP++;
+            }
+            else if(vector[k-1] > vector[k] && vector[k+1] > vector[k]){
+                nV++;
+            }
+        }
+        printf("%d %d\n", nP, nV);
+        k = 1;
+        j = 0;
+        nP = 0;
+        nV = 0;
+        free (vector);
+    }
+
+    return 0;
+}
