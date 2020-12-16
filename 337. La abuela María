@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    int dientesS[6], dientesI[6],i = 0,n = 0, j = 0, k =0; 
+    scanf("%d", &j);
+    for(k =0;k<j;k++){
+        
+        for(i =0;i<6;i++){
+            scanf("%d", &dientesS[i]);
+        }
+        for(i =0;i<6;i++){
+            scanf("%d", &dientesI[i]);
+            if(i == 0){
+                n = fabs(dientesS[i]-dientesI[i]);
+            } 
+            else if (n != fabs(dientesS[i]-dientesI[i])){
+                printf("NO\n");
+                i = 6;
+            }
+            else{
+                if(i == 5){
+                    printf("SI\n");
+                }
+            }
+        }
+        
+    }
+}
