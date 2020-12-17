@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	
+	int wires = 0, i, men = 0, women = 0,j;
+	char type[8];
+	scanf("%d",&j);
+	while(j--){
+		scanf("%d", &wires);
+		for(i =0;i<wires;i++){
+			scanf("%s", type);
+			if(!strcmp("HH", type)){
+				women++;
+			}
+			else if(!strcmp("MM", type)){
+				men++;
+			}
+		
+		}
+		if(men == women){
+			printf("POSIBLE\n");
+		}
+		else{
+			printf("IMPOSIBLE\n");
+		}
+		men = 0;
+		women = 0;
+	
+	}
+	return 0;
+	
+}
